@@ -1,0 +1,50 @@
+{
+  "name": "copy-file-path-contents",
+  "displayName": "Copy File Path + Contents",
+  "description": "Right-click an editor tab to copy the relative file path and full contents of one or more open files to your clipboard. Supports multi-file selection and untitled files.",
+  "version": "1.1.0",
+  "publisher": "DictionaryLabs",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "copy",
+    "clipboard",
+    "file path",
+    "file contents",
+    "context menu"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "copyFilePathContents.copy",
+        "title": "Copy File Path + Contents"
+      }
+    ],
+    "menus": {
+      "editor/title/context": [
+        {
+          "command": "copyFilePathContents.copy",
+          "group": "1_copy"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.1",
+    "@types/vscode": "^1.74.0",
+    "typescript": "^5.3.0"
+  }
+}
